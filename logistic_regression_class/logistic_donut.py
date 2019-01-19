@@ -74,7 +74,7 @@ for i in range(5000):
 
     # gradient descent weight udpate with regularization
     # w += learning_rate * ( np.dot((T - Y).T, Xb) - 0.01*w ) # old
-    w += learning_rate * ( Xb.T.dot(T - Y) - 0.1*w )
+    w += learning_rate * ( Xb.T.dot(T - Y) - 0.1*np.sign(w) )
 
     # recalculate Y
     Y = sigmoid(Xb.dot(w))
